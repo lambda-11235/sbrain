@@ -4,10 +4,10 @@ package brain
 import brain.ast._
 import brain.lexer._
 
-import scala.util.parsing.combinator.Parsers
+import scala.util.parsing.combinator
 
 
-package object Parsers extends Parsers {
+object Parsers extends combinator.Parsers {
   type Elem = Token
 
   def parse(str: String): ParseResult[List[Operation]] = phrase(ops)(Lexer.lex(str))

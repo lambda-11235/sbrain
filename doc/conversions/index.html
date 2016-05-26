@@ -346,29 +346,35 @@ the compiler.</p>
 <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#intermediate-representation" id="id7">Intermediate Representation</a></li>
-<li><a class="reference internal" href="#jvm-bytecode" id="id8">JVM Bytecode</a><ul>
-<li><a class="reference internal" href="#start" id="id9">start</a></li>
-<li><a class="reference internal" href="#conversions" id="id10">Conversions</a></li>
-<li><a class="reference internal" href="#end" id="id11">end</a></li>
+<li><a class="reference internal" href="#intermediate-representation" id="id10">Intermediate Representation</a></li>
+<li><a class="reference internal" href="#jvm-bytecode" id="id11">JVM Bytecode</a><ul>
+<li><a class="reference internal" href="#start" id="id12">start</a></li>
+<li><a class="reference internal" href="#conversions" id="id13">Conversions</a></li>
+<li><a class="reference internal" href="#end" id="id14">end</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#mips-conversion" id="id12">MIPS Conversion</a><ul>
-<li><a class="reference internal" href="#id1" id="id13">Start</a></li>
-<li><a class="reference internal" href="#id2" id="id14">Conversions</a></li>
-<li><a class="reference internal" href="#id3" id="id15">End</a></li>
+<li><a class="reference internal" href="#mips-conversion" id="id15">MIPS Conversion</a><ul>
+<li><a class="reference internal" href="#id1" id="id16">Start</a></li>
+<li><a class="reference internal" href="#id2" id="id17">Conversions</a></li>
+<li><a class="reference internal" href="#id3" id="id18">End</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#c-conversion" id="id16">C Conversion</a><ul>
-<li><a class="reference internal" href="#id4" id="id17">Start</a></li>
-<li><a class="reference internal" href="#id5" id="id18">Conversions</a></li>
-<li><a class="reference internal" href="#id6" id="id19">End</a></li>
+<li><a class="reference internal" href="#c-conversion" id="id19">C Conversion</a><ul>
+<li><a class="reference internal" href="#id4" id="id20">Start</a></li>
+<li><a class="reference internal" href="#id5" id="id21">Conversions</a></li>
+<li><a class="reference internal" href="#id6" id="id22">End</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#javascript" id="id23">Javascript</a><ul>
+<li><a class="reference internal" href="#id7" id="id24">start</a></li>
+<li><a class="reference internal" href="#id8" id="id25">Conversions</a></li>
+<li><a class="reference internal" href="#id9" id="id26">end</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="intermediate-representation">
-<h1><a class="toc-backref" href="#id7">Intermediate Representation</a></h1>
+<h1><a class="toc-backref" href="#id10">Intermediate Representation</a></h1>
 <p>The intermediate representation consists of 4 forms. Let # be some number.</p>
 <div class="line-block">
 <div class="line">ModPointer(#) - Modifies the cell pointer by adding # to it.</div>
@@ -379,9 +385,9 @@ the compiler.</p>
 </div>
 </div>
 <div class="section" id="jvm-bytecode">
-<h1><a class="toc-backref" href="#id8">JVM Bytecode</a></h1>
+<h1><a class="toc-backref" href="#id11">JVM Bytecode</a></h1>
 <div class="section" id="start">
-<h2><a class="toc-backref" href="#id9">start</a></h2>
+<h2><a class="toc-backref" href="#id12">start</a></h2>
 <div class="line-block">
 <div class="line">.class public BFProgram</div>
 <div class="line">.super java/lang/Object</div>
@@ -409,7 +415,7 @@ the compiler.</p>
 </div>
 </div>
 <div class="section" id="conversions">
-<h2><a class="toc-backref" href="#id10">Conversions</a></h2>
+<h2><a class="toc-backref" href="#id13">Conversions</a></h2>
 <div class="line-block">
 <div class="line">ModPointer(#)</div>
 <div class="line-block">
@@ -462,7 +468,7 @@ the compiler.</p>
 </div>
 </div>
 <div class="section" id="end">
-<h2><a class="toc-backref" href="#id11">end</a></h2>
+<h2><a class="toc-backref" href="#id14">end</a></h2>
 <div class="line-block">
 <div class="line-block">
 <div class="line">return</div>
@@ -472,11 +478,11 @@ the compiler.</p>
 </div>
 </div>
 <div class="section" id="mips-conversion">
-<h1><a class="toc-backref" href="#id12">MIPS Conversion</a></h1>
+<h1><a class="toc-backref" href="#id15">MIPS Conversion</a></h1>
 <p>Here's a quick sketch of how IR code should compile to MIPS.
 Note that the # is a number.</p>
 <div class="section" id="id1">
-<h2><a class="toc-backref" href="#id13">Start</a></h2>
+<h2><a class="toc-backref" href="#id16">Start</a></h2>
 <div class="line-block">
 <div class="line-block">
 <div class="line">.data</div>
@@ -495,7 +501,7 @@ Note that the # is a number.</p>
 </div>
 </div>
 <div class="section" id="id2">
-<h2><a class="toc-backref" href="#id14">Conversions</a></h2>
+<h2><a class="toc-backref" href="#id17">Conversions</a></h2>
 <div class="line-block">
 <div class="line">ModPointer(#)</div>
 <div class="line-block">
@@ -539,7 +545,7 @@ Note that the # is a number.</p>
 </div>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id15">End</a></h2>
+<h2><a class="toc-backref" href="#id18">End</a></h2>
 <div class="line-block">
 <div class="line">li $v0, 10</div>
 <div class="line">syscall</div>
@@ -547,11 +553,11 @@ Note that the # is a number.</p>
 </div>
 </div>
 <div class="section" id="c-conversion">
-<h1><a class="toc-backref" href="#id16">C Conversion</a></h1>
+<h1><a class="toc-backref" href="#id19">C Conversion</a></h1>
 <p>Here's a quick sketch of how IR code should compile to C.
 Note that the # is a number.</p>
 <div class="section" id="id4">
-<h2><a class="toc-backref" href="#id17">Start</a></h2>
+<h2><a class="toc-backref" href="#id20">Start</a></h2>
 <div class="line-block">
 <div class="line">#include &lt;stdio.h&gt;</div>
 <div class="line"><br /></div>
@@ -563,7 +569,7 @@ Note that the # is a number.</p>
 </div>
 </div>
 <div class="section" id="id5">
-<h2><a class="toc-backref" href="#id18">Conversions</a></h2>
+<h2><a class="toc-backref" href="#id21">Conversions</a></h2>
 <div class="line-block">
 <div class="line">ModPointer(#)</div>
 <div class="line-block">
@@ -596,13 +602,60 @@ Note that the # is a number.</p>
 </div>
 </div>
 <div class="section" id="id6">
-<h2><a class="toc-backref" href="#id19">End</a></h2>
+<h2><a class="toc-backref" href="#id22">End</a></h2>
 <div class="line-block">
 <div class="line-block">
 <div class="line">return 0;</div>
 </div>
 <div class="line">}</div>
 </div>
+</div>
+</div>
+<div class="section" id="javascript">
+<h1><a class="toc-backref" href="#id23">Javascript</a></h1>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id24">start</a></h2>
+<div class="line-block">
+<div class="line">arr = Array.apply(null, Array(30000)).map(Number.prototype.valueOf, 0);</div>
+<div class="line">idx = 0</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#id25">Conversions</a></h2>
+<div class="line-block">
+<div class="line">ModPointer(#)</div>
+<div class="line-block">
+<div class="line">idx += #</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">ModValue(#)</div>
+<div class="line-block">
+<div class="line">arr[idx] += #</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">Read(#) - Repeat # times.</div>
+<div class="line-block">
+<div class="line">arr[idx] = prompt(&quot;Enter character&quot;).charCodeAt(0)</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">Write(#) - Repeat # times.</div>
+<div class="line-block">
+<div class="line">document.write(String.fromCharCode(arr[idx]))</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="line">Loop(#, ...)</div>
+<div class="line-block">
+<div class="line">while(arr[idx] != 0) {</div>
+<div class="line-block">
+<div class="line">...</div>
+</div>
+<div class="line">}</div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2><a class="toc-backref" href="#id26">end</a></h2>
 </div>
 </div>
 </div>

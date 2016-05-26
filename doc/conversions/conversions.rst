@@ -22,3 +22,4 @@ The intermediate representation consists of 4 forms. Let # be some number.
 .. include:: jvm.rst
 .. include:: mips.rst
 .. include:: c.rst
+.. include:: javascript.rst

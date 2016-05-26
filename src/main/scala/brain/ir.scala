@@ -18,7 +18,7 @@ case class ModValue(amount: Int) extends IR
 case class Read(times: Int) extends IR
 
 /** Write a value from the tape to stdout a certain number of times. */
-case class Write(Times: Int) extends IR
+case class Write(times: Int) extends IR
 
 /** Loop over a some code.
  *
