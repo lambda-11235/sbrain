@@ -33,7 +33,7 @@ object JavaScript {
     init + read + write + main
   }
 
-  def convertIR(ir: IR): String = ir match {
+  private def convertIR(ir: IR): String = ir match {
     case ModPointer(amount) => "idx += " + amount.toString + ";\n"
 
     case ModValue(amount) => "arr[idx] += " + amount.toString + ";\n"
