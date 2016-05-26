@@ -5,7 +5,10 @@ Javascript
 start
 -----
 
-| arr = Array.apply(null, Array(30000)).map(Number.prototype.valueOf, 0);
+| arr = []
+|
+| for(var i = 0; i < 30000; i++) {arr[i] = 0}
+|
 | idx = 0
 | input = ""
 
@@ -20,7 +23,7 @@ Conversions
 |     arr[idx] += #
 |
 | Read(#) - Repeat # times.
-|     if(input.length == 0) {input = prompt("Enter text")}
+|     while(input.length == 0) {input = prompt("Enter text")}
 |     arr[idx] = input.charAt(0)
 |     input = input.substring(1)
 |

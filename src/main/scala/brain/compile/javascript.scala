@@ -12,8 +12,9 @@ object JavaScript {
    * @param numCells The number of cells supported at runtime.
    */
   def irToJS(ir: List[IR], numCells: Int): String = {
-    val init = ("arr = Array.apply(null, Array(" + numCells.toString
-                + ")).map(Number.prototype.valueOf, 0)\n"
+    val init = ("arr = []\n\n"
+                + ("for(var i = 0; i < " + numCells.toString
+                   + "; i++) {arr[i] = 0}\n\n")
                 + "idx = 0\n"
                 + "input = \"\"\n\n")
 
@@ -28,7 +29,7 @@ object JavaScript {
     case ModValue(amount) => "arr[idx] += " + amount.toString + "\n"
 
     case Read(times) => List.fill(times)(
-      "if(input.length == 0) {input = prompt(\"Enter text\")}\n"
+      "while(input.length == 0) {input = prompt(\"Enter text\")}\n"
       + "arr[idx] = input.charCodeAt(0)\n"
       + "input = input.substring(1)\n").fold("")(_+_)
 
